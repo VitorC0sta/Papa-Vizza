@@ -7,6 +7,8 @@ import { router } from "./routes/routes";
 import { Toaster } from "sonner";
 
 import { ThemeProvider } from "./common/components/theme/theme-provider";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryCLient } from "./lib/react-query";
 
 export function App() {
   return (
@@ -14,7 +16,10 @@ export function App() {
       <ThemeProvider storageKey="papavizza-theme" defaultTheme="dark">
         <Helmet titleTemplate="%s | papa.vizza" />
         <Toaster richColors />
-        <RouterProvider router={router} />
+        <QueryClientProvider client={queryCLient}>
+          <RouterProvider router={router} />
+
+        </QueryClientProvider>
       </ThemeProvider>
     </HelmetProvider>
   );
