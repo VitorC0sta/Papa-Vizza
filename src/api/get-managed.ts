@@ -1,6 +1,6 @@
 import { api } from "@/lib/axios";
 
-type GetManagedRestaurantResponseProps = {
+export type GetManagedRestaurantResponseProps = {
   id: string;
   name: string;
   createdAt: Date | null;
